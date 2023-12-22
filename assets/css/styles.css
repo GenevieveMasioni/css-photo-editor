@@ -1,0 +1,191 @@
+/************************************************************
+
+Author: Genevieve Masioni
+Author URI : http://genevievemasioni.com
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Version: 1.0
+Tags: photo editor, css filters
+
+**************************************************************
+
+Table of Contents:
+
+  0. GLOBAL
+  1. HEADER
+  2. MAIN
+  3. MEDIA QUERIES
+
+**************************************************************/
+
+
+/************************************************
+0.	GLOBAL
+************************************************/
+
+:root {
+    --base-bg-color: #fff;
+    --primary-color: #0f62fe;
+    --secondary-color: #f4f4f4;
+    --tertiary-color: #f5f5f5;
+    --base-shadow-color: #baaeab;
+    --base-font-color: #000;
+    --base-padding: 1rem;
+    --base-margin: 1rem;
+    --small-margin: .5rem;
+    --base-font-family: 'IBM Plex Sans','Arial', sans-serif;
+    --base-shadow: 0px 2px 10px rgba(5, 0, 56, 0.08);
+    --basic-border: .5px solid black;
+}
+
+html,
+body {
+    font-size: 16px;
+}
+
+body {
+    font-family: var(--base-font-family);
+    margin: 0;
+    color: var(--base-font-color);
+    box-sizing: border-box;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+.divider {
+    width: 100%;
+    border: none;
+    border-bottom: var(--basic-border);
+}
+
+/************************************************
+1.	HEADER
+************************************************/
+
+#site-header {
+    padding: var(--small-margin) var(--base-padding);
+    border-bottom: var(--basic-border);
+    /* background-color: var(--primary-color); */
+}
+
+#site-name {
+    font-size: 1rem;
+}
+
+#site-logo {
+    margin-right: var(--small-margin);
+    width: 2rem;
+}
+
+/************************************************
+2.	MAIN
+************************************************/
+
+#site-content {
+    height: 100%;
+    align-items: flex-start;
+}
+
+/* Photo previewer */
+
+.photo-previewer {
+    padding: var(--base-padding) var(--base-padding);
+    background-color: var(--secondary-color);
+    width: 66%;
+    height: 100%;
+    justify-content: center;
+    align-items: flex-start;
+    border-right: var(--basic-border);
+}
+
+.main-image {
+    max-width: 100%;
+}
+
+#photo {
+    display: none;
+}
+
+/* Photo filters/ settings */
+
+.settings-tab {
+    width: 33%;
+    height: 100%;
+    /* background-color: var(--tertiary-color); */
+}
+
+.settings-tab-header, 
+.filters-wrapper, 
+.file-upload-wrapper,
+.download-wrapper {
+    padding: 0 var(--base-padding);
+}
+
+.file-upload-wrapper {
+    margin: var(--base-margin) 0;
+}
+
+#dropbox {
+    box-sizing: border-box;
+    background-color: var(--secondary-color);
+    width: 100%;
+    height: 5rem;
+    margin-top: var(--base-margin);
+    padding: var(--base-padding);
+    border: var(--basic-border);
+    border-width: .08rem;
+    border-color: gray;
+    border-radius: .2rem;
+}
+
+.filters-wrapper {
+    margin: var(--base-margin) 0;
+}
+
+.filter-wrapper {
+    justify-content: space-between;
+    margin: var(--small-margin) 0;
+}
+
+.filter-wrapper input {
+    background-color: var(--secondary-color);
+    border: 1px solid gray;
+    border-radius: .2rem;;
+}
+
+#download-button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: var(--base-padding);
+}
+
+#download-button:hover {
+    cursor: pointer;
+}
+
+/************************************************
+3.	MEDIA QUERIES
+************************************************/
+
+
+@media (max-width: 1000px) {
+    #site-content {
+        flex-wrap: wrap;
+        display: block;
+    }
+
+    .photo-previewer {
+        width: 100%;
+        border: none;
+    }
+
+    .settings-tab {
+        width: 100%;
+        border: none;
+        margin-top: var(--small-margin);
+    }
+}
